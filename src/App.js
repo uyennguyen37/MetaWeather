@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { getWeatherForecasts } from './actions/weatherActions';
 
-function App() {
+import './App.css';
+import Weather from './components/Weather';
+import Form from './components/Form';
+
+const App = () => {
+  const weatherForecasts = useSelector(state => state.weatherForecasts);
+  const { location, forecastDays, error, isLoading } = weatherForecasts;
+  const dispatch = useDispatch();
+
+  const getWeather = async (e) => {
+    e.preventDefault();
+    dispatch(getWeatherForecasts(e.target.elements.city.value));
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Form loadWeather={getWeather} error={error}/>
+      { isLoading && <h5 data-testid="forecast-loading"> Loading weather... </h5> }
+      { !isLoading && 
+        <div>
+          <h1>{location}</h1> 
+          {forecastDays && forecastDays.map((day, idx) => {
+            return(<Weather day={day} key={idx}/>);
+          })}
+        </div>}
+  </div>
   );
 }
 

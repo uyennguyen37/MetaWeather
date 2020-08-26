@@ -1,4 +1,13 @@
+** Version 1.0.0 **
+
+This MetaWeather is a weather application developed using MetaWeather API (https://www.metaweather.com/api/)
+
+
+## Contributors
+Uyen Nguyen 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
