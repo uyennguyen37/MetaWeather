@@ -1,34 +1,36 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { Typography } from 'antd';
 import { getWeatherForecasts } from './actions/weatherActions';
 
 import './App.css';
-import Weather from './components/Weather';
-import Form from './components/Form';
+import WeatherList from './components/WeatherList';
+import SearchBox from './components/SearchBox';
+
+const { Title } = Typography;
 
 const App = () => {
-  const weatherForecasts = useSelector(state => state.weatherForecasts);
-  const { location, forecastDays, error, isLoading } = weatherForecasts;
+  const weatherForecasts = useSelector((state) => state.weatherReducer);
+  const { weatherData, fetching, location } = weatherForecasts;
+  
   const dispatch = useDispatch();
 
-  const getWeather = async (e) => {
-    e.preventDefault();
-    dispatch(getWeatherForecasts(e.target.elements.city.value));
-  }
-
+  const handleSelectCity = (woeid) => {
+       dispatch(getWeatherForecasts(woeid));
+  };
+     
   return (
     <div className="App">
-      <Form loadWeather={getWeather} error={error}/>
-      { isLoading && <h5 data-testid="forecast-loading"> Loading weather... </h5> }
-      { !isLoading && 
-        <div>
-          <h1>{location}</h1> 
-          {forecastDays && forecastDays.map((day, idx) => {
-            return(<Weather day={day} key={idx}/>);
-          })}
-        </div>}
-  </div>
+      <SearchBox onSelectCity={handleSelectCity} />
+      {fetching ? (
+        <Title level={4} data-testid="forecast-loading"> Loading weather... </Title>
+      ) : (
+        <>
+          <Title level={1}>{location}</Title> 
+          <WeatherList items={weatherData} />
+        </>
+      )}
+    </div>
   );
 }
 
