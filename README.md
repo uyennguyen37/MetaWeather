@@ -14,9 +14,10 @@ It was bootstrapped with [Create React App](https://github.com/facebook/create-r
 ### Technologies
 - react
 - react-redux
-- boostrap
+- antd
 - axios
 - momentjs
+- lodash
 
 ## How To Use
 
