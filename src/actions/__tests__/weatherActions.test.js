@@ -1,7 +1,7 @@
-import { searchLocation } from './weatherActions';
-import API from '../utils/API';
-import { SEARCH_LOCATION_SUCCESS } from '../constants/weatherConstants';
-jest.mock('../utils/API');
+import { searchLocation } from '../weatherActions';
+import API from '../../utils/API';
+import { SEARCH_LOCATION_SUCCESS } from '../../constants/weatherConstants';
+jest.mock('../../utils/API');
 
 describe('Weather Actions', () => {
     let mockDispatch;
