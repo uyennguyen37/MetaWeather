@@ -7,9 +7,9 @@
 ---
 
 ## Description 
-This MetaWeather is a weather application developed using MetaWeather API (https://www.metaweather.com/api/).
-It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Also, to enable cross-origin requests to anywhere, I use this API https://cors-anywhere.herokuapp.com/.
+- This MetaWeather is a weather application developed using MetaWeather API (https://www.metaweather.com/api/).
+- It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Also, to enable cross-origin requests to anywhere, I use this API https://cors-anywhere.herokuapp.com/.
 
 ### Technologies
 - `react` (a JavaScript library for building user interfaces.)
