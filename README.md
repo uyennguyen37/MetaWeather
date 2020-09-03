@@ -8,16 +8,16 @@
 
 ## Description 
 This MetaWeather is a weather application developed using MetaWeather API (https://www.metaweather.com/api/).
-
 It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Also, to enable cross-origin requests to anywhere, I use this API https://cors-anywhere.herokuapp.com/.
 
 ### Technologies
-- react (a JavaScript library for building user interfaces.)
-- react-redux (React bindings for Redux)
-- antd (an enterprise-class UI design language and React components implementation)
-- axios (promise based HTTP client for the browser)
-- momentjs (parse, validate, manipulate, and display dates)
-- lodash (lodash modular utilities)
+- `react` (a JavaScript library for building user interfaces.)
+- `react-redux` (React bindings for Redux)
+- `antd` (an enterprise-class UI design language and React components implementation)
+- `axios` (promise based HTTP client for the browser)
+- `momentjs` (parse, validate, manipulate, and display dates)
+- `lodash` (lodash modular utilities)
 
 ### Redux Data Flows 
 For reference, consider these depictions of generic redux flows taken from [ReachJS Issue #653](https://github.com/reactjs/redux/issues/653].
