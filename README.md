@@ -9,7 +9,7 @@
 ## Description 
 - This MetaWeather is a weather application developed using MetaWeather API (https://www.metaweather.com/api/).
 - It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-- Also, to enable cross-origin requests to anywhere, I use this API https://cors-anywhere.herokuapp.com/.
+- Using this API [https://cors-anywhere.herokuapp.com/] to bypass CORS issue.
 
 ### Technologies
 - `react` (a JavaScript library for building user interfaces.)
@@ -43,7 +43,7 @@ The reducers maintain state of the weather app.
 - `WeatherCard`is a component for a single day's weather forecast information.
 - `WeatherList` is a component for 6 days' weather forecasts
 
-I also use the following components from antd:
+Alse using the following components from antd:
 - `Title` for loading status, city & country.
 - `AutoComplete` and `Spin` for search.
 - `Row` and `Column` for weather list.
